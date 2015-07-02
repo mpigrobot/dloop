@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.0)
+project(DloopDetector)
+
+SET(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
+SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+ADD_SUBDIRECTORY(${CMAKE_SOURCE_DIR}/core)
+ADD_SUBDIRECTORY(${CMAKE_SOURCE_DIR}/examples)
+#message(STATUS "CORE_DIRS = ${CORE_DIRS}")
