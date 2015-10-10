@@ -56,6 +56,6 @@ mkdir bow loop
 ./bin/demo_surf /media/sf_Kylin/RawData/KITTI/dataset/sequences/02/left ./bow/kitti02_vol.yml.gz /media/sf_Kylin/trajectory/kitti02_trajectory.txt ./loop/kitti02loops.txt 1241 376
 ```
 ###How to generate the trajectory
-The pose file is only for visualization. It can be made based on GPS data or IMU data. In our application, the robot trajectory is the two translation components estimated by stereo version of Libviso2.
+The pose file is only for visualization. It can be made based on GPS data or IMU data. In our application, the robot trajectory is the two translation components estimated by the stereo version of [Libviso2](http://www.cvlibs.net/software/libviso/).
 
 **For more information, please contact [szl@mpig.com.cn](http://mpig.com.cn)**  
