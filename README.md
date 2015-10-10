@@ -25,7 +25,37 @@ It might take fairly long time according to the scale of your data. Then the DLo
 ./demo_surf <image dir> <voc_file> <pose_file> <loop_file> <image_width> <image_height>
 ``` 
 
-###The demo shells
-Two shells in the folder 'shell@Kylin@Wallaby' can help the MPIG members to run the demo quickly. Please generate the visual BoW firstly by running 'makeBow_malaga07.sh' and then check the trajectory loop contained in the same data with 'detectLoop_malaga07.sh'. PLS NOTE that the path of image data is only valid on the MPIG server Kylin@Wallaby, so the shells can't work on other host.
+###How to use on `Kylin@Wallaby`
+A couple of data are available on Kylin, but root permission is needed as the data are in the shared folder between Wallaby host and Kylin slave. The following instructions can can help MPIG members to run the demo with different dataset once the project is built.
+
+####KITTI00
+* Create directories for visual words and detected loop results
+```
+mkdir bow loop  
+``` 
+* Generate visual words
+```
+./bin/demo_bow2 /media/sf_Kylin/RawData/KITTI/dataset/sequences/00/left ./bow/kitti00_voc.yml.gz ./bow/kitti00_db.yml.gz
+```
+* Seek loops after the BoW is ready
+```
+./bin/demo_surf /media/sf_Kylin/RawData/KITTI/dataset/sequences/00/left ./bow/kitti00_vol.yml.gz /media/sf_Kylin/trajectory/kitti00_trajectory.txt ./loop/kitti00loops.txt 1241 376
+```
+####KITTI01
+```
+./bin/demo_bow2 /media/sf_Kylin/RawData/KITTI/dataset/sequences/01/left ./bow/kitti01_voc.yml.gz ./bow/kitti01_db.yml.gz
+```
+```
+./bin/demo_surf /media/sf_Kylin/RawData/KITTI/dataset/sequences/01/left ./bow/kitti01_vol.yml.gz /media/sf_Kylin/trajectory/kitti01_trajectory.txt ./loop/kitti01loops.txt 1241 376
+```
+####KITTI02
+```
+./bin/demo_bow2 /media/sf_Kylin/RawData/KITTI/dataset/sequences/02/left ./bow/kitti02_voc.yml.gz ./bow/kitti02_db.yml.gz
+```
+```
+./bin/demo_surf /media/sf_Kylin/RawData/KITTI/dataset/sequences/02/left ./bow/kitti02_vol.yml.gz /media/sf_Kylin/trajectory/kitti02_trajectory.txt ./loop/kitti02loops.txt 1241 376
+```
+###How to generate the trajectory
+The pose file is only for visualization. It can be made based on GPS data or IMU data. In our application, the robot trajectory is the two translation components estimated by stereo version of Libviso2.
 
 **For more information, please contact [szl@mpig.com.cn](http://mpig.com.cn)**  

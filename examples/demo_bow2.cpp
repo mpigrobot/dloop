@@ -126,8 +126,8 @@ void changeStructure(const vector<float> &plain, vector<vector<float> > &out,
 void testVocCreation(const vector<vector<vector<float> > > &features,string _dir,string voc_file)
 {
   // branching factor and depth levels 
-  const int k = 10;
-  const int L = 6;
+  const int k = 10; //10
+  const int L = 6; //6
   const WeightingType weight = TF_IDF;
   const ScoringType score = L1_NORM;
 

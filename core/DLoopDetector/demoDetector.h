@@ -342,8 +342,8 @@ void demoDetector<TVocabulary, TDetector, TDescriptor>::readPoseFile
     getline(f, s);
     if(!f.eof() && !s.empty())
     {
-      sscanf(s.c_str(), "%lf, %lf, %lf, %lf", &ts, &x, &y, &t);
-      //sscanf(s.c_str(), "%lf, %lf", &x, &y);
+      //sscanf(s.c_str(), "%lf, %lf, %lf, %lf", &ts, &x, &y, &t);
+      sscanf(s.c_str(), "%lf, %lf", &x, &y);
       std::cout<<"x, y = "<<x<<" "<<y<<std::endl;
       xs.push_back(x);
       ys.push_back(y);

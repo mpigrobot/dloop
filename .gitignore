@@ -2,4 +2,5 @@ build
 bin
 lib
 data
-data/*.gz
+bow
+loop
