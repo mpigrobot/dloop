@@ -26,7 +26,7 @@ It might take fairly long time according to the scale of your data. Then the DLo
 ``` 
 
 ###How to use on `Kylin@Wallaby`
-A couple of data are available on Kylin, but root permission is needed as the data are in the shared folder between Wallaby host and Kylin slave. The following instructions can can help MPIG members to run the demo with different dataset once the project is built.
+A couple of data are available on Kylin, but root permission is needed as the data are in the shared folder between Wallaby host and Kylin slave. The following instructions can help MPIG members to run the demo with different datasets once the project is built.
 
 ####KITTI00
 * Create directories for visual words and detected loop results
