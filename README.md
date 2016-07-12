@@ -6,6 +6,7 @@ Our implementation differs from the origin in following aspects:
 - All the folders and files are reoganized with CMake tool chain, so a couple of CMakeLists.txt are added.
 - The DBow2 is integrated with DLoopDetector. They are separated projects at Dorian's homepage.
 - Dorian has upgraded his code compling with OpenCV3.x, but my code still works with OpenCV2.x. Note that the new version of OpenCV is not backwardly compatible.
+- The shell 'create_eclipse_project' could generate Eclipse project, making debugging with an IDE possible.
 
 ###How to compile
 It can be compiled like the normal CMake organized project
