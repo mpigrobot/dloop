@@ -1,0 +1,4 @@
+#!/bin/sh
+mkdir -p build_eclipse
+cmake -E chdir build_eclipse cmake -G"Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug ../
+
