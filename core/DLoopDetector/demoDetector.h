@@ -185,8 +185,9 @@ void demoDetector<TVocabulary, TDetector, TDescriptor>::run
   detector.allocate(filenames.size());
   
   // prepare visualization windows
-  DUtilsCV::GUI::tWinHandler win = "Current image";
-  DUtilsCV::GUI::tWinHandler winplot = "Trajectory";
+  DUtilsCV::GUI::tWinHandler win 	   = "Current image";
+  DUtilsCV::GUI::tWinHandler winloop   = "Looped image";
+  DUtilsCV::GUI::tWinHandler winplot   = "Trajectory";
   
   DUtilsCV::Drawing::Plot::Style normal_style(2); // thickness
   DUtilsCV::Drawing::Plot::Style loop_style('r', 2); // color, thickness
@@ -203,7 +204,7 @@ void demoDetector<TVocabulary, TDetector, TDescriptor>::run
   int count = 0;
  
    // write headerline into file 
-    std::string head = "# imageIndex loopedIndex imageName imageName ";
+    std::string head = "# currentImgIdx loopedImgIdx currentImgName loopedImgName ";
     m_loopFile << head;
   // go
   for(unsigned int i = 0; i < filenames.size(); ++i)
@@ -234,13 +235,23 @@ void demoDetector<TVocabulary, TDetector, TDescriptor>::run
 
     if(result.detection())
     {
-      cout << "- Loop found with image " << result.match << "!"
-        << endl;
-     std::string loopedFileName = DUtils::FileFunctions::FileName(filenames[i]);
+     cout << "- Loop found with image " << result.match << "!" << endl;
+     std::string loopedFileName = DUtils::FileFunctions::FileName(filenames[result.match]);
      std::stringstream ss1;
      ss1 << result.match;
      _str = ss.str() + " " + ss1.str() + " " + currentFileName + " " + loopedFileName;
-    // _str << ss.str() << " " << ss1.str() << " "<< currentFileName << " " << loopedFileName;
+
+     /* ========== Add by Samuel for debugging =============== */
+     // get image
+     cv::Mat im = cv::imread(filenames[result.match].c_str(), 0); // grey scale
+     // show image
+     DUtilsCV::GUI::showImage(im, true, &winloop, 10);
+
+     /*
+     cout << " Press ENTER to continue... " << endl;
+     std::cin.ignore(); // Pause for debugging.
+     */
+     /* ====================================================== */
       ++count;
     }
     else
@@ -290,7 +301,7 @@ void demoDetector<TVocabulary, TDetector, TDescriptor>::run
     }
     
     cout << endl;
-   m_loopFile << _str; 
+    m_loopFile << _str;
     // show trajectory
     if(i > 0)
     {

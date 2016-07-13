@@ -1,0 +1,2 @@
+#!/bin/sh
+./bin/demo_surf ./resources/images ./resources/surf64_k10L6.voc.gz ./resources/pose.txt ./resources/loops.txt 640 480

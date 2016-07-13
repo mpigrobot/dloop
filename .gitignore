@@ -6,6 +6,4 @@ bow
 loop
 build_eclipse
 resources
-itest
-test
 *.swp

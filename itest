@@ -1,0 +1,4 @@
+#!/bin/sh
+#./bin/demo_surf /home/s/img ./bin/ivoc_surf.db.gz ./resources/pose.txt ./resources/loops.txt 640 480
+
+./bin/demo_surf /home/s/img ./resources/surf64_k10L6.voc.gz ./resources/pose.txt ./resources/loops.txt 640 480
