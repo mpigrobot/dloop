@@ -58,7 +58,7 @@ int main(int argc, char** argv)
 {
   if (argc<7)
   {
-    cout<<"Usage: ./demo_surf <image dir> <voc_file> <pose_file> <loop_file> <image_width> <image_height>"<<endl;
+    cout<<"Usage: ./demo_surf <image_dir> <voc_file> <pose_file> <loop_file> <image_width> <image_height>"<<endl;
     return 1;
   }
 
