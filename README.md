@@ -65,7 +65,6 @@ The pose file is only for visualization. It can be made based on GPS data or IMU
 * Run the shell 'create_eclipse_project', it should result a new folder 'build_eclipse' containing the '.project' and '.cproject' which eclipse needs.
 * Now start Eclipse, select File --> Import --> Existing projects into workspace, hit next, then browse for your package's directory (select root directory). Do NOT select Copy projects into workspace. Then finish. 
 You should now be able to browse through the code (hold down CTRL while clicking on a function/class name), get auto completion (automatically appears, or press CTRL-SPACE) et cetera.
-* Configure the bins as the following screenshot
+* Configure the bins following the screenshot
 ![eclipse screenshot](./examples/screenshot_eclipse_project.png)
-
 **For more information, please contact [szl@mpig.com.cn](http://mpig.com.cn)**  
